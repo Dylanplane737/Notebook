@@ -1,0 +1,43 @@
+/* Reset & Basics */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body, html { height: 100%; font-family: 'Courier New', Courier, monospace; background-color: #f0f4f8; color: #000; display: flex; flex-direction: column; }
+
+/* Container */
+.editor-container { flex: 1; display: flex; flex-direction: column; max-width: 1200px; margin: 20px auto; border: 2px solid #003366; border-radius: 6px; overflow: hidden; background: #fff; box-shadow: 0 0 12px rgba(0,0,0,0.3); }
+
+/* Header */
+.editor-header { background-color: #003366; padding: 8px 12px; color: white; font-weight: 700; font-size: 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.editor-title { user-select: none; flex-shrink: 0; }
+.button-container { display: flex; gap: 10px; flex-wrap: wrap; flex-grow: 1; justify-content: flex-end; }
+
+.dropdown { position: relative; user-select: none; }
+.dropdown > button { background-color: #00509e; border: none; color: white; padding: 8px 14px; font-size: 13px; font-weight: 600; cursor: pointer; border-radius: 4px; min-width: 90px; display: flex; align-items: center; justify-content: center; gap: 4px; transition: background-color 0.25s ease; white-space: nowrap; }
+.dropdown > button:hover, .dropdown > button:focus { background-color: #0071c5; outline: none; }
+.dropdown-content { display: none; position: absolute; top: 110%; left: 0; background-color: #003366; border-radius: 5px; min-width: 160px; box-shadow: 0 8px 16px rgba(0,0,0,0.3); z-index: 100; overflow: hidden; user-select: none; }
+.dropdown-content button, .dropdown-content input[type=color] { background-color: #003366; color: white; padding: 10px 14px; border: none; width: 100%; text-align: left; font-size: 13px; cursor: pointer; transition: background-color 0.2s ease; }
+.dropdown-content button:hover, .dropdown-content button:focus { background-color: #00509e; outline: none; }
+.dropdown:hover .dropdown-content, .dropdown:focus-within .dropdown-content { display: block; }
+
+/* Editor */
+.editor-content { flex: 1; display: flex; position: relative; padding: 12px; gap: 12px; overflow: hidden; }
+textarea#textInput, textarea#htmlInput { flex: 1; font-family: inherit; font-size: 16px; line-height: 1.4; padding: 12px; border: 2px solid #003366; border-radius: 6px; resize: none; outline-offset: 2px; caret-color: black; background-color: #fff; color: #000; box-shadow: inset 0 2px 6px rgba(0,0,0,0.1); transition: border-color 0.25s ease; min-height: 100%; overflow-y: auto; }
+textarea#textInput:focus, textarea#htmlInput:focus { border-color: #0071c5; box-shadow: 0 0 5px #0071c5; outline: none; background-color: #f9f9f9; }
+
+#htmlModeContainer { display: none; flex: 1; gap: 12px; height: 100%; width: 100%; flex-direction: row; }
+#htmlInput { min-width: 50%; height: 100%; overflow-y: auto; font-family: monospace; font-size: 14px; }
+#htmlOutput { flex: 1; border: 2px solid #003366; border-radius: 6px; background: #fff; height: 100%; box-shadow: inset 0 0 8px #9999aa; }
+
+.inserted-image, .inserted-link { max-width: 100%; margin-top: 10px; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); display: block; }
+a.inserted-link { display: inline-block; margin-top: 10px; color: #004080; text-decoration: underline; font-weight: 600; cursor: pointer; }
+
+.emoji-btn { font-size: 16px; padding: 8px 10px; background-color: transparent; border: none; color: white; cursor: pointer; transition: background-color 0.2s ease; width: 100%; text-align: center; }
+.emoji-btn:hover, .emoji-btn:focus { background-color: #00509e; outline: none; }
+input[type="color"] { width: 100%; height: 30px; border: none; padding: 0; cursor: pointer; background: none; margin-top: 4px; }
+
+@media (max-width: 700px) { 
+  .editor-header { justify-content: center; gap: 6px; } 
+  .button-container { justify-content: center; } 
+  #htmlModeContainer { flex-direction: column; } 
+  #htmlInput { min-width: 100%; height: 40%; } 
+  #htmlOutput { height: 60%; } 
+}
