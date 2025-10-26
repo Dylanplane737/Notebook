@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dylatosh™ Notebook v4</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="editor-container">
+  <div class="editor-header">
+    <div class="editor-title">Dylatosh™ Notebook v4</div>
+    <div class="button-container">
+      <!-- File Dropdown -->
+      <div class="dropdown">
+        <button>File ▼</button>
+        <div class="dropdown-content">
+          <button id="saveBtn">Save</button>
+          <button id="loadBtn">Load</button>
+          <button id="saveHtmlBtn">Download as HTML</button>
+        </div>
+      </div>
+      <!-- Text Size Dropdown -->
+      <div class="dropdown">
+        <button>Text ▼</button>
+        <div class="dropdown-content">
+          <button id="smallTextBtn">Small</button>
+          <button id="mediumTextBtn">Medium</button>
+          <button id="largeTextBtn">Large</button>
+        </div>
+      </div>
+      <!-- Font Dropdown -->
+      <div class="dropdown">
+        <button>Font ▼</button>
+        <div class="dropdown-content">
+          <button id="fontCourier">Courier New</button>
+          <button id="fontMonaco">Monaco</button>
+          <button id="fontArial">Arial</button>
+          <button id="fontGeorgia">Georgia</button>
+        </div>
+      </div>
+      <!-- Insert Dropdown -->
+      <div class="dropdown">
+        <button>Insert ▼</button>
+        <div class="dropdown-content">
+          <button id="insertImageBtn">Add Image</button>
+          <button id="insertLinkBtn">Add Link</button>
+        </div>
+      </div>
+      <!-- Symbols Dropdown -->
+      <div class="dropdown">
+        <button>Symbols ▼</button>
+        <div class="dropdown-content">
+          <button class="emoji-btn">÷</button>
+          <button class="emoji-btn">°</button>
+          <button class="emoji-btn">©</button>
+          <button class="emoji-btn">™</button>
+          <button class="emoji-btn">℃</button>
+          <button class="emoji-btn">℉</button>
+          <button class="emoji-btn">≠</button>
+          <button class="emoji-btn">➯</button>
+          <button class="emoji-btn">ft²</button>
+          <button class="emoji-btn">↺</button>
+          <button class="emoji-btn">🗸</button>
+          <button class="emoji-btn">≤</button>
+          <button class="emoji-btn">-_-</button>
+          <button class="emoji-btn">😜</button>
+          <button class="emoji-btn">😢</button>
+          <button class="emoji-btn">🙌</button>
+        </div>
+      </div>
+      <!-- Background Dropdown -->
+      <div class="dropdown">
+        <button>BG Color ▼</button>
+        <div class="dropdown-content">
+          <button id="bgWhite">White</button>
+          <button id="bgYellow">Yellow</button>
+          <button id="bgGray">Gray</button>
+          <button id="bgCustomBtn">Custom</button>
+          <input type="color" id="bgColorPicker" style="display:none;">
+        </div>
+      </div>
+      <!-- Mode Dropdown -->
+      <div class="dropdown">
+        <button>Mode ▼</button>
+        <div class="dropdown-content">
+          <button id="textModeBtn">Text Mode</button>
+          <button id="htmlModeBtn">HTML Mode</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="editor-content">
+    <textarea id="textInput" placeholder="Type your text here..."></textarea>
+    <div id="htmlModeContainer">
+      <textarea id="htmlInput" placeholder="Write HTML here..."></textarea>
+      <iframe id="htmlOutput" sandbox="allow-scripts allow-same-origin"></iframe>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
